@@ -1,0 +1,21 @@
+.wrapper{
+    background-color: var(--b-color);
+    
+}
+.head-box{
+    width: 100%;
+    background-color: pink;
+    margin-bottom: 30px;
+    background-color: #fff;
+    background-clip: border-box;
+    -webkit-box-shadow: 0 0 3px 0 #dee2e6;
+    box-shadow: 0 0 3px 0 #dee2e6;
+    border-radius: 6px;
+}
+.card-header{
+    display: flex;
+    padding: 15px;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-radius: 6px;
+}
