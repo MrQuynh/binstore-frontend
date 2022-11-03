@@ -1,0 +1,87 @@
+.wrapper{
+    width: 100%;
+    height: 360px;
+    background-color: white;
+    display: flex;
+    box-shadow: 0 0 3px 0 #dee2e6;
+    border-radius: 6px;
+    margin: 20px 0;
+    padding: 5px 5px 0 5px;
+    gap:4px;
+}
+.box-left{
+    width: 60%;
+    // background-color: red;
+}
+.box-right{
+    width: 40%;
+    background-color: blue;
+}
+// .swiper-top-item{
+//     width: 100% !important;
+// }
+.body-item{
+    color:#282c30 ;
+    font-size: 1.3rem;
+    text-align: center;
+    border-bottom: 3px solid white;
+    &:hover{
+        cursor: pointer;
+        border-bottom: 3px solid #0a8d95;
+        color: black;
+        font-weight: 600;
+
+    }
+}
+// ------
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+  
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+.swiper-pagination-bullet-active {
+    color: #fff;
+    background: #007aff;
+  }
+// .swiper-pagination-horizontal {
+//     display: flex !important;
+//     justify-content: space-between;
+// }
