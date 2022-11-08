@@ -1,0 +1,23 @@
+.wrapper{
+    margin-top: 100px;
+  
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+}
+.container{
+    width: var(--default-layout-width);
+   
+    display: flex;
+}
+.left{
+    width: 20%;
+background-color: var(--b-color);
+}
+.right{
+    background-color: white;
+}
+.info{
+    display: flex;
+}

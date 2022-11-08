@@ -1,0 +1,128 @@
+.wrapper{
+    margin-top: 100px;
+  
+    
+    display: flex;
+    justify-content: center;
+    background-color: var(--b-color);
+    min-height: 100vh;
+    
+}
+.container{
+    width: var(--default-layout-width);
+   
+    display: flex;
+    padding: 0 2px;
+    margin-top: 20px;
+    height: 80vh;
+}
+.left{
+    width: 20%;
+    background-color: var(--b-color);
+}
+
+.info{
+    display: flex;
+    margin: 20px 0;
+    
+}
+.avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+    
+}
+.name{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.info-icon{
+    display: flex;
+    flex-direction: column;
+}
+.edit{
+    display: flex;
+    align-items: center;
+    color: #888;
+    font-size: 1.4rem;
+    &:hover{
+        cursor: pointer;
+        opacity: 0.9;
+    }
+}
+.list-title{
+    font-size: 1.4rem;
+    display: flex;align-items: center;
+    margin:10px 0 ;
+    &:hover{
+        cursor: pointer;
+        color: orangered;
+        .list-title-icon{
+            color: orangered;
+        }
+    }
+}
+.list-title-icon{
+    color: #5584be;
+    font-size: 1.8rem;
+    margin-right: 6px;
+}
+.icon-active{
+    color: orangered !important;
+    .list-title-icon{
+        color: orangered;
+    }
+}
+.right{
+   width: 80%;
+    
+}
+.nav{
+    width: 100%;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 13%);
+    border-radius: 4px;
+    display: flex;
+    div{
+        padding: 16px 0;
+        font-size: 1.6rem;
+        color: black;
+        border-bottom: 2px solid rgba(0,0,0,.09);
+        width: 17.77%;
+        text-align: center;
+        &:hover{
+            cursor: pointer;
+            color: #ee4d2d;
+        }
+    }
+    .nav-active{
+        color: #ee4d2d;
+        border-bottom: 2px solid #ee4d2d;
+    }
+    
+}
+.right-body{
+    width: 100%;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 13%);
+    border-radius: 4px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-product{
+    width: 100%;
+    height: 100%;
+}
+.product-item{
+    margin-top: 10px;
+    display: flex;
+}
+.product-image{
+    width: 58px;
+    height: 40px;
+}
