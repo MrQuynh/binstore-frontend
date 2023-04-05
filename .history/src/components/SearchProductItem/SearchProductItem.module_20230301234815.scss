@@ -1,0 +1,41 @@
+.wrapper {
+    background-color: var(--bg-gray);
+    color: var(--text-color-black);
+    display: flex;
+    align-items: center;
+    padding: 6px 16px;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--bg-color-hover);
+    }
+}
+
+.avatar {
+    width: 70px;
+    height: 40px;
+    border-radius: 6%;
+    object-fit: contain;
+}
+
+.info {
+    flex: 1;
+    margin-left: 12px;
+    // width: 700px;
+}
+
+.name {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.check {
+    margin-left: 6px;
+    color: var(--tick-color);
+    font-size: 1.4rem;
+}
+
+.username {
+    font-size: 1.4rem;
+    color: var(--text-color-gray);
+}

@@ -1,9 +1,10 @@
 import styles from './Banner.module.scss';
 import classNames from 'classnames/bind';
 import AwesomeSwiper from 'react-awesome-swiper';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from '~/components/Image';
 import { Link } from 'react-router-dom';
+import { getAllCode } from '~/services/productService';
 
 const cx = classNames.bind(styles);
 function Banner({ isSlider = false }) {
@@ -36,6 +37,11 @@ function Banner({ isSlider = false }) {
         },
     };
     const swiperRef = useRef();
+    const currentUrl = window.location.href.split('/')[3];
+    const [codeGroup, setCodeGroup] = useState('');
+    useEffect(() => {
+        getAllCode('group').then((data) => data && data.errCode === 0 && setCodeGroup(data.data));
+    }, []);
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
@@ -44,8 +50,8 @@ function Banner({ isSlider = false }) {
                         <Link to="/">
                             <li className={cx('direct-active')}>Trang chủ</li>
                         </Link>
-                        <li>/ Điện thoại</li>
-                        <li>/ Apple(Iphone)</li>
+                        <li>/ {codeGroup && codeGroup.find((item) => item.keyMap === currentUrl)?.value}</li>
+                        {/* <li>/ Apple(Iphone)</li> */}
                     </ol>
                 </div>
                 {isSlider && (

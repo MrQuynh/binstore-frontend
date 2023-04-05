@@ -1,0 +1,118 @@
+.wrapper{
+    width: 100%;
+    height: calc(100vh - 44px);
+    background-color: #e6f3f7;  
+    // display: flex;
+    // flex-direction: column;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    height: 80px;
+    font-weight: 600;
+    font-size: 2.3rem;
+    color: blue;
+    line-height: 80px;
+}
+.body-message{
+    width:100% ;
+    background-color: #e6f3f7;
+    height: calc(100% - 80px);
+    flex: 1;
+    padding: 0px 10px;
+    display: flex;
+    border-radius: 4px;
+}
+.left{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: white;
+    border-radius: 8px;
+}
+.left-title{
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+.left-input-body{
+    width: 100%;
+    height: 70%;
+    border-radius: 20px;
+    margin: 10px 8px;
+    border: 1px solid rgba(24,24,25,0.2);
+    display: flex;
+    align-items: center;
+}
+.left-input-icon{
+    font-size: 2.0rem;
+    margin: 0 8px ;
+}
+.left-input{
+    width: 80%;
+    height: 100%;
+    font-size: 1.6rem;
+}
+.left-list-user{
+    height: calc(100% - 50px);
+    border-top: 2px solid rgba(24,24,24,0.2);
+    padding: 10px 0px 0;
+    margin: 0 0 10px 0;
+    display: flex;
+}
+.left-list{
+    background-color: red;
+    width: 100%;
+    margin: 0 0 20px 0;
+    height: 100%;
+    overflow: scroll;
+}
+.item{
+    display: flex;
+    height: 78px;
+    padding: 8px 0;
+    background-color: #fff;
+    align-items: center;
+    &:hover{
+        cursor: pointer;
+        background-color:#f5f6f7 ;
+    }
+
+}
+.item-active{
+    background-color: #f5f6f7;
+}
+.item-avatar{
+    margin-left: 8px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+}
+.item-body{
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    
+}
+.item-body-info{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    // background-color: red;
+    padding:0 14px 0 ;
+}
+.item-status{
+    position: absolute;
+    right: 10px;
+    background-color: red;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+// right
+.right{
+    width: 70%;
+}

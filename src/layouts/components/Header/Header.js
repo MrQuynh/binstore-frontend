@@ -44,7 +44,7 @@ function Header() {
                     <Link to="/" className={cx('logo-link')}>
                         <Image
                             className={cx('logo-image', 'image')}
-                            src="https://scontent.xx.fbcdn.net/v/t1.15752-9/312494556_1162450954707245_848274316746732500_n.jpg?stp=dst-jpg_p206x206&_nc_cat=100&ccb=1-7&_nc_sid=aee45a&_nc_ohc=luv22BP2z0MAX8odsfy&_nc_oc=AQlhaAuHFYXF4RCJMlTJfdinry6S1POgFH2UucGaOn4OKq762znlYSRTz7HfxnCz0FoVteMklTevSqmiMvrMghYp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRwk0u6dLp6XArUZpnwe4kpVRWWxIZI0GOePUJ-dkgi0g&oe=63933F05"
+                            src="https://www.svgrepo.com/show/217771/shopping-logo.svg"
                             alt="TikTok"
                         />
                     </Link>

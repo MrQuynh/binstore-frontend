@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 function ToastMessage() {
     const [text, setText] = useState('Loading...');
     useEffect(() => {
-        setTimeout(() => setText('Successfully!'), [5000]);
+        setTimeout(() => setText('Successfully!'), [2000]);
     }, []);
     return (
         <div className={cx('wrapper')}>

@@ -1,10 +1,12 @@
 import axios from 'axios';
 
-const linkApi = 'https://binstroe-backend.onrender.com/';
+// const linkApi = 'https://binstroe-backend.onrender.com/';
+const linkApi = 'http://localhost:8000//';
 let token = localStorage.getItem('TOKEN');
 if (token) {
     token = token?.slice(1, token.length - 1);
 }
+
 const request = axios.create({
     baseURL: linkApi,
     headers: {

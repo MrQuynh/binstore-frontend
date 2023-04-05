@@ -87,7 +87,7 @@ const userMenu = [
 
 function Header() {
     let list = JSON.parse(localStorage.getItem('CARD_LIST'));
-    const [listProducts, setListProducts] = useState('');
+    const [idProduct, setListProducts] = useState('');
     useEffect(() => {
         setListProducts(list);
     }, [list]);
@@ -113,9 +113,7 @@ function Header() {
                 </div>
 
                 <div className={cx('actions')} onClick={() => setIsModalBuy(true)}>
-                    <p className={cx('actions-noti')}>
-                        {listProducts && listProducts.length > 0 ? listProducts.length : ''}
-                    </p>
+                    <p className={cx('actions-noti')}>{idProduct && idProduct.length > 0 ? idProduct.length : ''}</p>
                     <HeaderCart />
                     {/* <Tippy delay={[0, 50]} content={<FormattedMessage id="search.upLoad" />} placement="bottom">
                             <Link to="/upload">
