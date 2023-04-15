@@ -11,11 +11,11 @@ import { Link } from 'react-router-dom';
 import { bookingService } from '~/services/userService';
 import Loading from '../Loading/Loading';
 import { toast } from 'react-toastify';
+import FormatPrice from '../FormatPrice/FormatPrice';
 
 const cx = classNames.bind(styles);
 function ModalBuy({ setIsModal }) {
     let useInfo = JSON.parse(localStorage.getItem('USER_LOG_IN'));
-
     const [cartList, setCartList] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [change, setChange] = useState();
@@ -76,22 +76,19 @@ function ModalBuy({ setIsModal }) {
                 };
                 console.log(idProduct);
 
-                bookingService(dataSend)
-                    .then((res) => {
-                        if (res) {
-                            setIsLoading(false);
-                            if (res.errCode === 0) {
-                                localStorage.setItem('CART_LISTS', null);
-                                setIsModal(false);
-                                toast.success('Đặt hàng thành công!');
-                            }
+                bookingService(dataSend).then((res) => {
+                    if (res) {
+                        setIsLoading(false);
+                        if (res.errCode === 0) {
+                            localStorage.setItem('CART_LISTS', null);
+                            setIsModal(false);
+                            toast.success('Đặt hàng thành công!');
                         }
-                    })
-                    .catch((error) => console.log(error));
+                    }
+                });
             }
         }
     };
-
     useEffect(() => {
         let cartList1 = JSON.parse(localStorage.getItem('CART_LISTS'));
         cartList1 = cartList1 && cartList1.length > 0 ? cartList1?.reverse() : cartList1;
@@ -108,6 +105,14 @@ function ModalBuy({ setIsModal }) {
         localStorage.setItem('CART_LISTS', JSON.stringify(newList));
     };
 
+    const sumArray = (arr) => {
+        let sum = 0;
+        arr.map(function (value) {
+            sum += Number(value.priceDown);
+        });
+
+        return sum;
+    };
     return (
         <Portal>
             <div className={cx('wrapper')} onClick={() => setIsModal(false)}>
@@ -145,7 +150,9 @@ function ModalBuy({ setIsModal }) {
                                             </ul>
                                         </div>
                                         <div className={cx('info-right-product')}>
-                                            <p>{item.priceDown}đ</p>
+                                            <p>
+                                                <FormatPrice price={item.priceDown} />
+                                            </p>
                                             <span onClick={() => handleDelete(index)}>
                                                 <BsFillTrashFill className={cx('icon-trash')} />
                                                 Xóa
@@ -169,32 +176,27 @@ function ModalBuy({ setIsModal }) {
                                 <div className={cx('price-total')}>
                                     <p>Tổng tiền:</p>
                                     <span>
-                                        {cartList && cartList.length > 0
-                                            ? '' +
-                                              cartList.reduce((a, b) => +b.priceDown.split('.').join('') + a, 0) /
-                                                  1000000 +
-                                              '0.000'
-                                            : '0'}
-                                        đ
+                                        {cartList && cartList.length > 0 ? (
+                                            <FormatPrice price={sumArray(cartList)} />
+                                        ) : (
+                                            '0'
+                                        )}
                                     </span>
                                 </div>
                                 <div className={cx('price-total')}>
                                     <p>Giảm:</p>
-                                    <span>{cartList && cartList.length > 0 ? '-970.000đ' : '0đ'}</span>
+                                    <span>
+                                        {cartList && cartList.length > 0 ? <FormatPrice price="970000" /> : '0đ'}
+                                    </span>
                                 </div>
                                 <div className={cx('pay-total')}>
                                     <p>Cần thanh toán:</p>
                                     <span>
-                                        {cartList && cartList.length > 0
-                                            ? '' +
-                                              cartList.reduce(
-                                                  (a, b) => +b.priceDown.split('.').join('') + a - 970000,
-                                                  0,
-                                              ) /
-                                                  1000000 +
-                                              '0.000'
-                                            : '0'}
-                                        đ
+                                        {cartList && cartList.length > 0 ? (
+                                            <FormatPrice price={sumArray(cartList) - 970000} />
+                                        ) : (
+                                            '0'
+                                        )}
                                     </span>
                                 </div>
                             </div>

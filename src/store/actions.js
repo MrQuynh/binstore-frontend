@@ -6,6 +6,7 @@ import {
     GET_BRAND_REDUX,
     SET_LANGUAGE,
     SET_MESSAGE_REDUX,
+    SET_NEWS,
 } from './constants';
 
 export const getAllProducts = (payload) => ({
@@ -34,5 +35,9 @@ export const activeUserRedux = (payload) => ({
 });
 export const setLanguage = (payload) => ({
     type: SET_LANGUAGE,
+    payload,
+});
+export const setNewsRedux = (payload) => ({
+    type: SET_NEWS,
     payload,
 });

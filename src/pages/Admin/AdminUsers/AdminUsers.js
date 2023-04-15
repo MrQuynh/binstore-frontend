@@ -63,27 +63,30 @@ function AdminUsers() {
                     </thead>
                     {users &&
                         users.length > 0 &&
-                        users.map((item, index) => (
-                            <tbody key={index}>
-                                <tr>
-                                    <td>{item.id}</td>
-                                    <td colSpan="2">{item.nickName}</td>
-                                    <td colSpan="2">{item.email}</td>
-                                    <td className={cx('table-action')}>
-                                        <div>
-                                            <AiFillEdit
-                                                className={cx('actions-icon')}
-                                                onClick={() => handleEdit(item)}
-                                            />
-                                            <BsFillTrashFill
-                                                className={cx('actions-icon')}
-                                                onClick={() => handleDelete(item.id)}
-                                            />
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        ))}
+                        users.map(
+                            (item, index) =>
+                                item.email != 'admin@gmail.com' && (
+                                    <tbody key={index}>
+                                        <tr>
+                                            <td>{item.id}</td>
+                                            <td colSpan="2">{item.nickName}</td>
+                                            <td colSpan="2">{item.email}</td>
+                                            <td className={cx('table-action')}>
+                                                <div>
+                                                    <AiFillEdit
+                                                        className={cx('actions-icon')}
+                                                        onClick={() => handleEdit(item)}
+                                                    />
+                                                    <BsFillTrashFill
+                                                        className={cx('actions-icon')}
+                                                        onClick={() => handleDelete(item.id)}
+                                                    />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                ),
+                        )}
                 </table>
             </div>
         </div>

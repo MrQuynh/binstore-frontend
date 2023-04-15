@@ -151,10 +151,10 @@ function HeaderNav() {
                     </li>
                 )}
                 <li className={cx('header__navbar-item', 'help')}>
-                    <a href="/" className={cx('header__navbar-item-link')}>
+                    <Link to="/help" className={cx('header__navbar-item-link')}>
                         <BiHelpCircle className={cx('header__navbar-icon')} />
                         <FormattedMessage id="home.help" />
-                    </a>
+                    </Link>
                 </li>
                 {!JSON.parse(localStorage.getItem('IS_LOGIN')) ? (
                     <li

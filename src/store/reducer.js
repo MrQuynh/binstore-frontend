@@ -6,18 +6,18 @@ import {
     GET_BRAND_REDUX,
     SET_LANGUAGE,
     SET_MESSAGE_REDUX,
+    SET_NEWS,
 } from './constants';
 
 const initState = {
     language: JSON.parse(localStorage.getItem('LANGUAGE')) || 'en',
-    // ___________
     allProducts: [],
     brandRedux: [],
     chooseBrandState: { isChecked: true, keyMap: 'B0', value: 'All' },
     setMessage: false,
     countMessageRedux: 0,
     activeUserRedux: 2,
-    // language: JSON.parse(localStorage.getItem('LANGUAGE')) || 'en',
+    setNewsRedux: 0,
 };
 
 function reducer(state, action) {
@@ -74,6 +74,11 @@ function reducer(state, action) {
             return {
                 ...state,
                 language: action.payload,
+            };
+        case SET_NEWS:
+            return {
+                ...state,
+                setNewsRedux: action.payload,
             };
         default:
             throw new Error('Invalid action...');

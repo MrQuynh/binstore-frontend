@@ -28,7 +28,7 @@ function BrandSaleUp() {
                         </Link>
                     </div>
                     <div className={cx('brand-item')}>
-                        <Link to="laptop">
+                        <Link to="/laptop">
                             <Image src="https://images.fpt.shop/unsafe/fit-in/214x212/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/6/638006647423918444_HTML-IMG-3.png" />
                             <div className={cx('brand-btn-body')}>
                                 <div className={cx('brand-sale')}>
@@ -48,7 +48,7 @@ function BrandSaleUp() {
                         </Link>
                     </div>
                     <div className={cx('brand-item')}>
-                        <Link to="phone">
+                        <Link to="/phone">
                             <Image src="https://images.fpt.shop/unsafe/fit-in/214x212/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/6/638006650603301823_HTML-IMG-5.png" />
                             <div className={cx('brand-btn-body')}>
                                 <div className={cx('brand-sale')}>
@@ -58,7 +58,7 @@ function BrandSaleUp() {
                         </Link>
                     </div>
                     <div className={cx('brand-item')}>
-                        <Link to="/phone">
+                        <Link to="/house-ware">
                             <Image src="https://images.fpt.shop/unsafe/fit-in/214x212/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/6/638006648509231290_HTML-IMG-4.png" />
                             <div className={cx('brand-btn-body')}>
                                 <div className={cx('brand-sale')}>

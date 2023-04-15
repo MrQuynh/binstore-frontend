@@ -6,6 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import Image from '~/components/Image';
 import styles from './ProductItem.module.scss';
+import FormatPrice from '~/components/FormatPrice/FormatPrice';
 
 const cx = classNames.bind(styles);
 function ProductItem({ data }) {
@@ -24,7 +25,8 @@ function ProductItem({ data }) {
                     <div className={cx('product-info')}>
                         <h3 className={cx('product-info-title')}>{data && data.name}</h3>
                         <div className={cx('product-info-price')}>
-                            {data && data.priceDown} VND <span>{data && data.priceUp} VND</span>
+                            {data && <FormatPrice price={data.priceDown} />}
+                            <span>{data && <FormatPrice price={data.priceUp} />} </span>
                         </div>
                         <div className={cx('more-info')}>
                             <div className={cx('more-info-item')}>

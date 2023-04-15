@@ -46,7 +46,7 @@ function HomeDiscount() {
                 <AwesomeSwiper ref={swiperRef} config={config} className="your-classname">
                     <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                            <Link to="#">
+                            <Link to="/tin-tuc/thu-thuat">
                                 <Image
                                     className={cx('image')}
                                     src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/20/637939260761612196_F_384x180-4.png"
@@ -55,7 +55,7 @@ function HomeDiscount() {
                         </div>
 
                         <div className="swiper-slide">
-                            <Link to="#">
+                            <Link to="/tin-tuc/thu-thuat">
                                 <Image
                                     className={cx('image')}
                                     src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/31/638028567274104149_F_H3_384x180-2.png"
@@ -63,7 +63,7 @@ function HomeDiscount() {
                             </Link>
                         </div>
                         <div className="swiper-slide">
-                            <Link to="#">
+                            <Link to="/tin-tuc/thu-thuat">
                                 <Image
                                     className={cx('image')}
                                     src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/9/30/638001773957012890_F_384x180%20copy%204.jpg"
@@ -71,7 +71,7 @@ function HomeDiscount() {
                             </Link>
                         </div>
                         <div className="swiper-slide">
-                            <Link to="#">
+                            <Link to="/tin-tuc/thu-thuat">
                                 <Image
                                     className={cx('image')}
                                     src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/31/638028562938690922_F_384x180.jpg"

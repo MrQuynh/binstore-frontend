@@ -131,7 +131,7 @@
     &:hover{
         .product-image{
             transform: scale(1.03);
-            transition: all 0.4s;
+            transition: all 0.4s ease;
         }
         border: solid 1px #dee2e6;
         box-shadow: 0 0 2px 0 #dee2e6;
@@ -144,7 +144,6 @@
     width: 100%;
     background-color: var(--border-image-color);
     display: flex;
-    
     justify-content: center;
     height: 214px;
     border-radius: 10px;
@@ -152,6 +151,7 @@
     border-left: 2px solid var(--border-image-color);
     border-right: 2px solid var(--border-image-color);
     border-bottom: 2px solid var(--border-image-color);
+    transition: all .3s ease;
     
 }
 

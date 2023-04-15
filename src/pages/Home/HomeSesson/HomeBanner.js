@@ -6,6 +6,7 @@ import { useRef, useState } from 'react';
 
 import AwesomeSwiper from 'react-awesome-swiper';
 import { FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 const image =
@@ -13,10 +14,10 @@ const image =
 
 const listSlider = [
     { image: image, title: ['Iphone 14 Giảm', '50%'] },
-    { image: image, title: ['Iphone 1 Giảm', '10%'] },
-    { image: image, title: ['Iphone 2 Giảm', '20%'] },
-    { image: image, title: ['Iphone 3 Giảm', '30%'] },
-    { image: image, title: ['Iphone 4 Giảm', '40%'] },
+    { image: image, title: ['Xiaomi 13 Giảm', '10%'] },
+    { image: image, title: ['Nokia ABS Giảm', '20%'] },
+    { image: image, title: ['Iphone 13 Giảm', '30%'] },
+    { image: image, title: ['Samsung Giảm', '40%'] },
 ];
 const config = {
     loop: true,
@@ -110,9 +111,11 @@ function HomeBanner() {
                     <AwesomeSwiper ref={swiperRef} config={config} className="your-classname">
                         <div className="swiper-wrapper">
                             {listSlider.map((item, index) => (
-                                <div className="swiper-slide" key={index}>
-                                    <Image src={item.image} />
-                                </div>
+                                <Link to="/phone/Vivo-V25e-8GB---128GB?id=17" key={index}>
+                                    <div className="swiper-slide">
+                                        <Image src={item.image} />
+                                    </div>
+                                </Link>
                             ))}
                         </div>
                         <div className="swiper-button-prev"></div>
@@ -121,12 +124,14 @@ function HomeBanner() {
                     <AwesomeSwiper ref={swiperRef} config={config1} className="your-classname">
                         <div className="swiper-wrapper">
                             {listSlider.map((item, index) => (
+                                // <Link to="/phone/Vivo-V25e-8GB---128GB?id=17">
                                 <div className="swiper-slide" key={index}>
                                     <div className={cx('body-item')}>
                                         <div className="text">{item.title[0]}</div>
                                         <div className="text">{item.title[1]}</div>
                                     </div>
                                 </div>
+                                // </Link>
                             ))}
                         </div>
                     </AwesomeSwiper>
@@ -146,25 +151,31 @@ function HomeBanner() {
                     <p>
                         <FormattedMessage id="home.special" />
                     </p>
-                    <span>
-                        <FormattedMessage id="home.seeAll" />
-                    </span>
+                    <Link to="/tin-tuc/tin-khuyen-mai">
+                        <span>
+                            <FormattedMessage id="home.seeAll" />
+                        </span>
+                    </Link>
                 </div>
                 <div className={cx('list-special')}>
-                    <div className={cx('item-special')}>
-                        <Image
-                            className={cx('image-item')}
-                            src="https://images.fpt.shop/unsafe/fit-in/70x40/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/images/2015/TamTTM10/1(2).png"
-                        />
-                        <p>Siêu hội Xiaomi mê ly đến 40%</p>
-                    </div>
-                    <div className={cx('item-special')}>
-                        <Image
-                            className={cx('image-item')}
-                            src="https://images.fpt.shop/unsafe/fit-in/70x40/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/images/2015/PhuongMT5/OPPO%20A95.png"
-                        />
-                        <p>OPPO A95 giá sốc chỉ 5.990.000Đ</p>
-                    </div>
+                    <Link to="/tin-tuc/tin-khuyen-mai">
+                        <div className={cx('item-special')}>
+                            <Image
+                                className={cx('image-item')}
+                                src="https://images.fpt.shop/unsafe/fit-in/70x40/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/images/2015/TamTTM10/1(2).png"
+                            />
+                            <p>Siêu hội Xiaomi mê ly đến 40%</p>
+                        </div>
+                    </Link>
+                    <Link to="/tin-tuc/tin-khuyen-mai">
+                        <div className={cx('item-special')}>
+                            <Image
+                                className={cx('image-item')}
+                                src="https://images.fpt.shop/unsafe/fit-in/70x40/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/images/2015/PhuongMT5/OPPO%20A95.png"
+                            />
+                            <p>OPPO A95 giá sốc chỉ 5.990.000Đ</p>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

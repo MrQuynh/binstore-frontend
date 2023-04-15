@@ -7,7 +7,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
             "react-app/jest"
         ]
     }, -->
-
+<!-- setCartList(cartList1);
+         cartList1 &&
+            cartList1.length > 0 &&
+            cartList1.map((item) => {
+                setMoney((prev) => Number(prev) + Number(item.priceDown));
+            }); -->
 ## Available Scripts
 <!-- node -->
  <!-- "gh-pages": "^4.0.0", -->

@@ -12,7 +12,7 @@
     &:hover{
         .product-image{
             transform: scale(1.03);
-            transition: all 0.4s;
+            transition: all 0.4s ease;
             cursor: pointer;
         }
         border: solid 1px #dee2e6;
@@ -38,6 +38,7 @@
     border-left: 2px solid var(--border-image-color);
     border-right: 2px solid var(--border-image-color);
     border-bottom: 2px solid var(--border-image-color);
+    transition: all .3s ease;
     
 }
 .link{

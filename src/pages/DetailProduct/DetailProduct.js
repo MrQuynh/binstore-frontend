@@ -17,6 +17,7 @@ import { createAComments, deleteAComment, getAllCode, getAllComments } from '~/s
 import moment from 'moment';
 import { FiMoreVertical } from 'react-icons/fi';
 import { FormattedMessage } from 'react-intl';
+import FormatPrice from '~/components/FormatPrice/FormatPrice';
 
 const cx = classNames.bind(styles);
 
@@ -28,7 +29,6 @@ function DetailProduct() {
         // tawk.onStatusChange((status) => {});
     }, []);
     const [questionActive, setQuestionActive] = useState(false);
-    // const [listCmt, setListCmt] = useState(listComments);
     const [valueCmt, setValueCmt] = useState('');
     const [isModal, setIsModal] = useState(false);
     const match = useLocation();
@@ -39,6 +39,7 @@ function DetailProduct() {
     const [listComments, setListComments] = useState('');
     const [changeListComments, setChangeListComments] = useState('');
     const [showDelete, setShowDelete] = useState(false);
+    const urlCurrent = window.location.pathname;
 
     useEffect(() => {
         getAProductService(idProduct).then((data) => data && data.errCode === 0 && setInfoProduct(data.data));
@@ -52,14 +53,10 @@ function DetailProduct() {
     useEffect(() => {
         getAllCode('group').then((data) => {
             data && data.errCode === 0 && setCodeGroup(data.data);
-            // const vd = data.data.find((item) => item.keyMap === 'phone');
-            // console.log('test', vd);
         });
         getAllCode('brain').then((data) => data && data.errCode === 0 && setCodeBrain(data.data));
     }, []);
-    // console.log(codeGroup);
-    // getAllComments
-    // console.log('quynh', infoProduct);
+
     const handleSendCmt = () => {
         if (valueCmt) {
             createAComments({ productId: idProduct, comment: valueCmt }).then((data) => {
@@ -194,8 +191,8 @@ function DetailProduct() {
                     <div className={cx('body-right')}>
                         <div className={cx('price-body')}>
                             <div className={cx('price-left')}>
-                                {infoProduct && infoProduct.priceDown}đ{' '}
-                                <span>{infoProduct && infoProduct.priceUp}đ</span>
+                                {infoProduct && <FormatPrice price={infoProduct.priceDown} />}
+                                <span>{infoProduct && <FormatPrice price={infoProduct.priceUp} />}</span>
                             </div>
                             <div className={cx('price-right')}>
                                 <p>
@@ -212,21 +209,21 @@ function DetailProduct() {
                                     <input type="radio" defaultChecked="checked" name="gb" value="16" />
                                     <label>{infoProduct && infoProduct.ram}</label>
                                 </div>
-                                <span>{infoProduct && infoProduct.priceDown}đ</span>
+                                <span>{infoProduct && <FormatPrice price={infoProduct.priceDown} />}</span>
                             </div>
                             <div className={cx('option-item')}>
                                 <div className={cx('price-radio')}>
                                     <input type="radio" value="128" name="gb" disabled />
                                     <label>128GB</label>
                                 </div>
-                                <span>{infoProduct && infoProduct.priceUp}đ</span>
+                                <span>{infoProduct && <FormatPrice price={infoProduct.priceUp} />}</span>
                             </div>
                             <div className={cx('option-item')}>
                                 <div className={cx('price-radio')}>
                                     <input type="radio" name="gb" disabled />
                                     <label>1TB</label>
                                 </div>
-                                <span>{infoProduct && infoProduct.priceUp}đ</span>
+                                <span>{infoProduct && <FormatPrice price={infoProduct.priceUp} />}</span>
                             </div>
                         </div>
                         <div className={cx('box-promo')}>
@@ -281,20 +278,30 @@ function DetailProduct() {
                                 </div>
                             </div>
                             <div className={cx('btn-gop')}>
-                                <div className={cx('btn-buy-now', 'btn-gop-item')}>
+                                <Link
+                                    to={`${urlCurrent}/${idProduct}/tra-gop`}
+                                    className={cx('btn-buy-now', 'btn-gop-item')}
+                                >
+                                    {/* <div className={cx('btn-buy-now', 'btn-gop-item')}> */}
                                     <div className={cx('btn-buy-now-big')}>
                                         <FormattedMessage id="detail.installment" />
                                     </div>
                                     <div>
                                         <FormattedMessage id="detail.onPhone" />
                                     </div>
-                                </div>
-                                <div className={cx('btn-buy-now', 'btn-gop-item')}>
+                                    {/* </div> */}
+                                </Link>
+                                <Link
+                                    to={`${urlCurrent}/${idProduct}/tra-gop`}
+                                    className={cx('btn-buy-now', 'btn-gop-item')}
+                                >
+                                    {/* <div className={cx('btn-buy-now', 'btn-gop-item')}> */}
                                     <div className={cx('btn-buy-now-big')}>
                                         <FormattedMessage id="detail.payOnVisa" />
                                     </div>
                                     <div>Visa, Master Card, JCB, AMEX</div>
-                                </div>
+                                    {/* </div> */}
+                                </Link>
                             </div>
                         </div>
                         <div className={cx('connect')}>

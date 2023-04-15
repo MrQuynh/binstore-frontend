@@ -6,6 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import Image from '~/components/Image';
 import styles from './Suggestion.module.scss';
+import FormatPrice from '~/components/FormatPrice/FormatPrice';
 
 const cx = classNames.bind(styles);
 const list = [
@@ -64,7 +65,10 @@ function Suggestion({ data }) {
                                         <div className={cx('product-info')}>
                                             <h3 className={cx('product-info-title')}>{item.name}</h3>
                                             <div className={cx('product-info-price')}>
-                                                {item.priceDown} VND <span>{item.priceUp} VND</span>
+                                                <FormatPrice price={item.priceDown} />
+                                                <span>
+                                                    <FormatPrice price={item.priceUp} />
+                                                </span>
                                             </div>
                                             <div className={cx('more-info')}>
                                                 <div className={cx('more-info-item')}>
