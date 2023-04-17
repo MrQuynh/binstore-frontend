@@ -1,0 +1,12 @@
+.wrapper{
+    margin-top: 100px;
+    width: 100%;
+    background-color: var(--b-color);
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    background-color: var(--bg-color);
+    width: var(--default-layout-width);
+}
